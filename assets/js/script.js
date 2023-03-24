@@ -29,13 +29,13 @@ function runGame(gameType){
         displayAddtionQuestion(num1, num2);
     } 
     else if (gameType === 'subtract') {
-        displaySubtractQuestion(num1, num2)
+        displaySubtractQuestion(num1, num2);
     }
     else if (gameType === 'multiply'){
-        displayMultiplyQuestion(num1, num2)
+        displayMultiplyQuestion(num1, num2);
     } 
     else if (gameType === 'division') {
-        displayDivideQuestion(num1, num2)
+        displayDivideQuestion(num1, num2);
     } else {
         throw `Unknown game type: ${gameType}. Aborting!`;
     }
@@ -73,7 +73,9 @@ function calculateCorrectAnswer(){
 
     if (operator === '+'){
         return [operand1 + operand2, 'addition'];
-    } else {
+    } else if (operator === 'x'){
+        return [operand1 * operand2, 'multiply'];
+    }else {
         alert(`Unimplemented operator ${opeator}`);
         throw `Unimplemented operator ${operator}`;
     }
